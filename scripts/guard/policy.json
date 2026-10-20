@@ -1,0 +1,32 @@
+{
+  "_comment": "Per-agent boundaries enforced by team_guard.py. Paths are relative to the Team root unless absolute. {name} is replaced with the agent name. An agent missing from this file gets the 'default' profile (own workspace only, no Bash, no web). Only the owner edits this file; agents cannot write to scripts/.",
+  "default": {
+    "write": ["agents/{name}", "handoffs", "board", "approvals/pending"],
+    "bash_scripts": [],
+    "web_hosts": []
+  },
+  "agents": {
+    "chief-of-staff": { "bash_scripts": ["handoff.ps1", "new-agent.ps1"] },
+    "hr":             { "bash_scripts": ["new-agent.ps1"] },
+    "reporting": {
+      "write_extra": ["C:/claude/Project/REPORTING"]
+    },
+    "gtm-signoff": {
+      "write_extra": ["C:/claude/Project/gtm"]
+    },
+    "alm-tickets": { "web_hosts": ["dev.azure.com", "*.visualstudio.com"] },
+    "alm-dubray":  { "web_hosts": ["dev.azure.com", "*.visualstudio.com"] },
+    "vault-keeper": {
+      "write_extra": [
+        "C:/claude/Vaults",
+        "C:/claude/Project/b2b",
+        "C:/claude/Project/erosNg"
+      ]
+    }
+  },
+  "never_write_names": [".git", ".obsidian", ".claude", ".secrets", ".env", "guard"],
+  "never_write_prefixes": [".env"],
+  "secret_name_patterns": ["\\.secrets", "(^|[\\\\/])\\.env($|[.\\\\/])", "api[_-]?key", "\\.pfx$", "\\.pem$", "id_rsa", "credentials", "\\.kdbx$"],
+  "team_protected": ["company", "scripts", ".claude", "CLAUDE.md", "approvals/approved", "approvals/rejected", "approvals/TEMPLATE.md", "schedules"],
+  "agent_allowed_tools": ["Read", "Write", "Edit", "Glob", "Grep", "Bash", "WebFetch", "TodoWrite"]
+}

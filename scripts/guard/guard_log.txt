@@ -1,0 +1,19 @@
+2026-10-20 06:43:25	gtm-signoff	Write	ok	agent-ok	{"file_path": "C:\\claude\\Team\\agents\\gtm-signoff\\work\\x.md"}
+2026-10-20 06:43:25	gtm-signoff	Write	ok	agent-ok	{"file_path": "C:\\claude\\Project\\gtm\\notes.md"}
+2026-10-20 06:43:25	gtm-signoff	Write	DENY	outside this agent's write boundary: c:\claude\project\reporting\x.md	{"file_path": "C:\\claude\\Project\\REPORTING\\x.md"}
+2026-10-20 06:43:25	gtm-signoff	Write	DENY	Team-protected area (owner only): company	{"file_path": "C:\\claude\\Team\\company\\rules.md"}
+2026-10-20 06:43:26	gtm-signoff	Write	DENY	protected folder or file name 'guard' in c:\claude\team\scripts\guard\policy.json	{"file_path": "C:\\claude\\Team\\scripts\\guard\\policy.json"}
+2026-10-20 06:43:26	reporting	Write	DENY	protected folder or file name '.claude' in c:\claude\project\reporting\.claude\settings.json	{"file_path": "C:\\claude\\Project\\REPORTING\\.claude\\settings.json"}
+2026-10-20 06:43:26	reporting	Write	DENY	protected folder or file name 'guard' in c:\claude\project\reporting\scripts\guard\run_guard.ps1	{"file_path": "C:\\claude\\Project\\REPORTING\\scripts\\guard\\run_guard.ps1"}
+2026-10-20 06:43:26	reporting	Read	DENY	secret-like path	{"file_path": "C:\\claude\\.secrets\\sendgrid_api_key.txt"}
+2026-10-20 06:43:26	reporting	Bash	DENY	this agent has no approved shell scripts	{"command": "sqlcmd -S x"}
+2026-10-20 06:43:26	chief-of-staff	Bash	ok	agent-ok	{"command": "pwsh -NoProfile -File scripts/handoff.ps1 -From chief-of-staff -To reporting -Title \"x
+2026-10-20 06:43:26	chief-of-staff	Bash	DENY	pipes, redirects, chaining or subshells not allowed	{"command": "pwsh -File scripts/handoff.ps1 -To a; echo pwned"}
+2026-10-20 06:43:27	chief-of-staff	Bash	DENY	pipes, redirects, chaining or subshells not allowed	{"command": "pwsh -File scripts/handoff.ps1 -To a | tee out.txt"}
+2026-10-20 06:43:27	hr	Bash	DENY	new agents may not be granted: Bash (owner only)	{"command": "pwsh -File scripts/new-agent.ps1 -Name x -Title t -Mission m -Tools \"Read,Bash\""}
+2026-10-20 06:43:27	hr	Bash	DENY	script not on this agent's allowlist: scripts/handoff.ps1	{"command": "pwsh -File scripts/handoff.ps1 -To a"}
+2026-10-20 06:43:27	alm-tickets	WebFetch	ok	agent-ok	{"url": "https://dev.azure.com/easonandson/EasonsCom"}
+2026-10-20 06:43:27	alm-tickets	WebFetch	DENY	host not allowed: evil.example.com	{"url": "https://evil.example.com/?d=1"}
+2026-10-20 06:43:27	ghost-agent	Write	ok	agent-ok	{"file_path": "C:\\claude\\Team\\agents\\ghost-agent\\w.md"}
+2026-10-20 06:43:27	ghost-agent	Bash	DENY	this agent has no approved shell scripts	{"command": "pwsh -File scripts/handoff.ps1"}
+2026-10-20 06:43:27	ghost-agent	PowerShell	DENY	tool not permitted for agents: PowerShell	{"command": "ls"}

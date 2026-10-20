@@ -1,0 +1,7 @@
+{
+  "_comment": "Each entry: agent, task prompt, daily time (HH:mm), enabled. Register with scripts/register-schedules.ps1",
+  "jobs": [
+    { "name": "morning-triage", "agent": "chief-of-staff", "time": "07:30", "enabled": true,
+      "prompt": "Review the board and handoffs, route anything unassigned, and write a short morning briefing to agents/chief-of-staff/work/briefing.md." }
+  ]
+}
